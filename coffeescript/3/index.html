@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>CoffeeSearch</title>
+	<style type="text/css">
+		.goog {
+			float:left;
+		}
+		.twit {
+			float:right;
+		}
+	</style>
+	<script type="text/javascript">
+		function doSearch(){
+			var query = $('searchQuery').value();
+			var se = new CS.MockSearch();
+			se.search(query, function(results){
+				var gr = $("gr")[0];
+				for (var i=0;i<results.google.length;i++){
+					gr.innerHTML += "<p>" + results.google[i].toHtml() + "</p>";
+				}
+				var tr = $("tr")[0];
+				for (var j=0;j<results.twitter.length;j++){
+					tr.innerHTML += "<p>" + results.twitter[i].toHtml() + "</p>";
+				}
+			});
+		}
+	</script>
+</head>
+<body>
+	<div>
+		<label for="searchQuery">Keyword:</label>
+		<input type="text" name="searchQuery" id="searchQuery"></input>
+		<input type="button" value="Search" onclick="doSearch()"/>
+	</div>
+	<div>
+		<span class="goog" id="gr"/>
+		<span class="twit" id="tr"/>
+	</div>
+</body>
+</html>
