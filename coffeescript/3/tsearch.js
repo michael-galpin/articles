@@ -23,7 +23,8 @@
 			"source":"&lt;a href=&quot;http://itunes.apple.com/us/app/twitter/id409789998?mt=12&quot; rel=&quot;nofollow&quot;&gt;Twitter for Mac&lt;/a&gt;",
 			"text":"&quot;CoffeeScript [is] the closest I felt to the power I had twenty years ago in Smalltalk&quot; - Ward Cunningham (http://t.co/2Wve2V4l) Nice.",
 			"to_user_id":null,
-			"to_user_id_str":null}
+			"to_user_id_str":null
+			}
 	],
 	"results_per_page":15,
 	"since_id":0,
