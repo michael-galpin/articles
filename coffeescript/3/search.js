@@ -85,7 +85,7 @@
         return $(id).innerHTML += "<p>" + (x.toHtml()) + "</p>";
       });
     };
-    ms = new MockSearch();
+    ms = new MockSearch;
     return ms.search(kw, function(results) {
       appender("gr", results.google);
       return appender("tr", results.twitter);
