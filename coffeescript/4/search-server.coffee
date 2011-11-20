@@ -1,7 +1,4 @@
 http = require "http"
-url = require "url"
-path = require "path"
-fs = require "fs"
 			
 fetchPage = (host, port, path, callback) ->
 	options = 
@@ -38,6 +35,8 @@ combinedSearch = (keyword, callback) ->
 		if data.google != ""
 			callback(data)
 
+path = require "path"
+fs = require "fs"
 serveStatic = (uri, response) ->
 	fileName = path.join process.cwd(), uri
 	path.exists fileName, (exists) ->
@@ -54,6 +53,7 @@ serveStatic = (uri, response) ->
 			response.write file, "binary"
 			response.end()
 			
+url = require "url"
 server = http.createServer (request, response) ->
 	uri = url.parse(request.url)
 	if uri.pathname == "/doSearch"
