@@ -39,8 +39,10 @@ class CombinedSearch
 				if xhr.status is 200
 					response = JSON.parse xhr.responseText
 					results = 
-						google: response.google.map (result) -> new GoogleSearchResult result
-						twitter: response.twitter.map (result) -> new TwitterSearchResult result
+						google: response.google.map (result) -> 
+							new GoogleSearchResult result
+						twitter: response.twitter.map (result) -> 
+							new TwitterSearchResult result
 					callback results
 		xhr.send null
 
